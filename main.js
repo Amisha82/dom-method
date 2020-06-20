@@ -27,3 +27,31 @@ button.addEventListener("click", function () {
     mainElement.remove()
 
 })
+
+let texttype = document.createElement("input")
+documentBody.append(texttype)
+
+let newbutton = document.createElement("button")
+newbutton.append("New Button")
+documentBody.append(newbutton)
+
+newbutton.addEventListener("click", function () {
+    let texttyped = texttype.value
+    console.log(texttyped)
+    // let x = image1Div
+    // let y = image2Div
+    //let r = mainElement
+
+    console.log(image1Div)
+    if (texttyped = image1Div) {
+        img.classList.remove(".image")
+    }
+    //else if (texttyped = image2Div) {
+    //  image2Div.remove()
+    //}
+    //else {
+    //  mainElement.remove()
+    //}
+
+
+})
