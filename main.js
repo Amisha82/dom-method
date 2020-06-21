@@ -6,13 +6,16 @@ mainElement.classList.add("main")
 documentBody.append(mainElement)
 mainElement.append("Main")
 
-
+document.write("<br>");
 let button = document.createElement("Button")
 button.append("Button")
 documentBody.append(button)
 
+
 let image1Div = document.createElement("img")
 image1Div.classList.add("image")
+
+image1Div.append("Image")
 image1Div.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT1WnDM9mJABnZceANC7CUusrMeeYMWO372rHeNru-HLKyb0Vjx&usqp=CAU"
 mainElement.append(image1Div)
 
@@ -27,31 +30,41 @@ button.addEventListener("click", function () {
     mainElement.remove()
 
 })
-
+document.write("<br>");
+document.write("<br>");
 let texttype = document.createElement("input")
 documentBody.append(texttype)
 
 let newbutton = document.createElement("button")
-newbutton.append("New Button")
+newbutton.append("Remove Element")
 documentBody.append(newbutton)
 
 newbutton.addEventListener("click", function () {
     let texttyped = texttype.value
     console.log(texttyped)
-    // let x = image1Div
-    // let y = image2Div
-    //let r = mainElement
+    // document.querySelectorAll('.' + texttyped).forEach(function (a) {
+    //   a.remove()
+    //})
+    let mainElement1 = documentBody.getElementsByClassName("main")
+    let image = documentBody.getElementsByClassName("image")
+    console.log(image)
+    let link1 = documentBody.getElementsByClassName("link")
+    let querySelectorAll = [mainElement1, image, link1]
+    for (index = 0; index < querySelectorAll.length; index++) {
+        let currSelector = querySelectorAll[index]
+        console.log(currSelector);
+        if (currSelector === texttyped) {
+            texttyped.remove()
 
-    console.log(image1Div)
-    if (texttyped = image1Div) {
-        img.classList.remove(".image")
+        }
     }
-    //else if (texttyped = image2Div) {
-    //  image2Div.remove()
-    //}
-    //else {
-    //  mainElement.remove()
-    //}
-
 
 })
+document.write("<br>");
+document.write("<br>");
+let textAdd = document.createElement("input")
+documentBody.append(textAdd)
+
+let addInputbutton = document.createElement("button")
+addInputbutton.append("Add Element")
+documentBody.append(addInputbutton)
