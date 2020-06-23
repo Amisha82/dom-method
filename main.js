@@ -40,7 +40,7 @@ newbutton.append("Remove Element")
 documentBody.append(newbutton)
 
 newbutton.addEventListener("click", function () {
-    let texttyped = '.' + texttype.value
+    let texttyped = texttype.value
     console.log(texttyped)
 
     let element = document.querySelectorAll(texttyped)
@@ -68,9 +68,6 @@ addInputbutton.addEventListener("click", function () {
     let link;
     let p;
     let button;
-    let ad1Element = link;
-    let ad2Element = p;
-    let ad3Element = button;
     let array = ["link", "p", "button"]
 
     if (addInput === "link") {
@@ -81,30 +78,35 @@ addInputbutton.addEventListener("click", function () {
         paraEle(array[1])
 
     }
-
     else if (addInput === "button") {
         buttonElement(array[2])
     }
 
     function linkEle(a) {
         a = document.createElement("a")
+        let linkDiv = document.createElement("div")
         a.append("link")
         a.href = "URL"
-        return documentBody.append(a)
+        linkDiv.append(a)
+        return documentBody.append(linkDiv)
     }
 
     function paraEle(b) {
         b = document.createElement("p")
+        let paraDiv = document.createElement("div")
         b.append("p")
+        paraDiv.append(b)
 
-        return documentBody.append(b)
+        return documentBody.append(paraDiv)
     }
     function buttonElement(c) {
         c = document.createElement("button")
+        let buttonDiv = document.createElement("div")
+        buttonDiv.append(c)
         c.append("click here")
         console.log(c)
 
-        return documentBody.append(c)
+        return documentBody.append(buttonDiv)
     }
 })
 
