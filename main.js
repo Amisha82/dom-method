@@ -40,31 +40,72 @@ newbutton.append("Remove Element")
 documentBody.append(newbutton)
 
 newbutton.addEventListener("click", function () {
-    let texttyped = texttype.value
+    let texttyped = '.' + texttype.value
     console.log(texttyped)
-    // document.querySelectorAll('.' + texttyped).forEach(function (a) {
-    //   a.remove()
-    //})
-    let mainElement1 = documentBody.getElementsByClassName("main")
-    let image = documentBody.getElementsByClassName("image")
-    console.log(image)
-    let link1 = documentBody.getElementsByClassName("link")
-    let querySelectorAll = [mainElement1, image, link1]
-    for (index = 0; index < querySelectorAll.length; index++) {
-        let currSelector = querySelectorAll[index]
-        console.log(currSelector);
-        if (currSelector === texttyped) {
-            texttyped.remove()
 
-        }
+    let element = document.querySelectorAll(texttyped)
+    for (index = 0; index < element.length; index++) {
+        remove(element[index])
     }
 
 })
+
+
+function remove(a) {
+    a.remove()
+}
 document.write("<br>");
 document.write("<br>");
 let textAdd = document.createElement("input")
 documentBody.append(textAdd)
-
 let addInputbutton = document.createElement("button")
 addInputbutton.append("Add Element")
 documentBody.append(addInputbutton)
+
+addInputbutton.addEventListener("click", function () {
+    let addInput = textAdd.value;
+    console.log(addInput)
+    let link;
+    let p;
+    let button;
+    let ad1Element = link;
+    let ad2Element = p;
+    let ad3Element = button;
+    let array = ["link", "p", "button"]
+
+    if (addInput === "link") {
+
+        linkEle(array[0])
+    }
+    else if (addInput === "p") {
+        paraEle(array[1])
+
+    }
+
+    else if (addInput === "button") {
+        buttonElement(array[2])
+    }
+
+    function linkEle(a) {
+        a = document.createElement("a")
+        a.append("link")
+        a.href = "URL"
+        return documentBody.append(a)
+    }
+
+    function paraEle(b) {
+        b = document.createElement("p")
+        b.append("p")
+
+        return documentBody.append(b)
+    }
+    function buttonElement(c) {
+        c = document.createElement("button")
+        c.append("click here")
+        console.log(c)
+
+        return documentBody.append(c)
+    }
+})
+
+
