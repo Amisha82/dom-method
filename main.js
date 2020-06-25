@@ -63,24 +63,33 @@ addInputbutton.append("Add Element")
 documentBody.append(addInputbutton)
 
 addInputbutton.addEventListener("click", function () {
-    let addInput = textAdd.value;
-    console.log(addInput)
-    let link;
-    let p;
-    let button;
-    let array = ["link", "p", "button"]
-
-    if (addInput === "link") {
-
-        linkEle(array[0])
+    let addInput = textAdd.value
+    addEl(addInput)
+    function addEl(text) {
+        // a = document.createElement("a")
+        let elDiv = document.createElement("div")
+        elDiv.append(text)
+        return documentBody.append(elDiv)
     }
-    else if (addInput === "p") {
-        paraEle(array[1])
+    //addInputbutton.addEventListener("click", function () {
+    //  let addInput = textAdd.value;
+    //console.log(addInput)
+    //let link;
+    //let p;
+    //let button;
+    //let array = ["link", "p", "button"]
 
-    }
-    else if (addInput === "button") {
-        buttonElement(array[2])
-    }
+    //if (addInput === "link") {
+
+    //  linkEle(array[0])
+    //}
+    //else if (addInput === "p") {
+    //  paraEle(array[1])
+
+    //}
+    //else if (addInput === "button") {
+    //  buttonElement(array[2])
+    //}
 
     function linkEle(a) {
         a = document.createElement("a")
@@ -103,7 +112,7 @@ addInputbutton.addEventListener("click", function () {
         c = document.createElement("button")
         let buttonDiv = document.createElement("div")
         buttonDiv.append(c)
-        c.append("click here")
+        c.append("button")
         console.log(c)
 
         return documentBody.append(buttonDiv)
